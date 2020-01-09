@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:tic_tac_toe_flutter/ui/widgets/circle_widget.dart';
 import 'package:tic_tac_toe_flutter/ui/widgets/x_widget.dart';
 
 class MatrixWidget extends StatefulWidget {
@@ -28,7 +29,7 @@ class _MatrixWidgetState extends State<MatrixWidget> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              XWidget(), XWidget(), XWidget()
+              XWidget(), XWidget(), CircleWidget(isDark: false)
             ],
           ),
           Divider(),
