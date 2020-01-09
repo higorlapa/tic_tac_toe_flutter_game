@@ -1,3 +1,0 @@
-class GameModel {
-  double highestScore;
-}
