@@ -11,6 +11,10 @@ class MatrixWidget extends StatefulWidget {
 class _MatrixWidgetState extends State<MatrixWidget> {
 
   bool _isDark = false;
+  final GlobalKey _rowKey = GlobalKey();
+  double _rowHeight = 10;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -20,23 +24,25 @@ class _MatrixWidgetState extends State<MatrixWidget> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Row(
+            key: _rowKey,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              XWidget(), XWidget(), XWidget()
+              XWidget(), _verticalWidget(), XWidget(), _verticalWidget(), XWidget(),
             ],
           ),
           Divider(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              XWidget(), XWidget(), CircleWidget(isDark: false)
+              XWidget(),_verticalWidget(), XWidget(),_verticalWidget(), CircleWidget(isDark: false)
             ],
           ),
+          VerticalDivider(),
           Divider(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              XWidget(), XWidget(), XWidget()
+              XWidget(), _verticalWidget(), CircleWidget(isDark: false), _verticalWidget(), XWidget()
             ],
           )
         ],
@@ -54,6 +60,19 @@ class _MatrixWidgetState extends State<MatrixWidget> {
       _isDark = brightness == Brightness.dark;
     });
 
+    WidgetsBinding.instance.addPostFrameCallback(
+            (_) {
+              setState(() {
+                _rowHeight = _rowKey.currentContext.size.height;
+              });
+            });
 
+
+
+  }
+
+
+  Widget _verticalWidget() {
+    return Container(height: _rowHeight, child: VerticalDivider(color: Colors.grey));
   }
 }
