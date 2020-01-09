@@ -10,7 +10,7 @@ class _InGameScreenState extends State<InGameScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        ///ToDO: Generate the Matrix
+
       ),
     );
   }
