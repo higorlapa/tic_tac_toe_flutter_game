@@ -9,12 +9,9 @@ class MatrixWidget extends StatefulWidget {
 }
 
 class _MatrixWidgetState extends State<MatrixWidget> {
-
   bool _isDark = false;
   final GlobalKey _rowKey = GlobalKey();
   double _rowHeight = 10;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +24,22 @@ class _MatrixWidgetState extends State<MatrixWidget> {
             key: _rowKey,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              XWidget(), _verticalWidget(), XWidget(), _verticalWidget(), XWidget(),
+              XWidget(),
+              _verticalWidget(),
+              XWidget(),
+              _verticalWidget(),
+              XWidget(),
             ],
           ),
           Divider(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              XWidget(),_verticalWidget(), XWidget(),_verticalWidget(), CircleWidget(isDark: false)
+              XWidget(),
+              _verticalWidget(),
+              XWidget(),
+              _verticalWidget(),
+              CircleWidget(isDark: false)
             ],
           ),
           VerticalDivider(),
@@ -42,7 +47,11 @@ class _MatrixWidgetState extends State<MatrixWidget> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              XWidget(), _verticalWidget(), CircleWidget(isDark: false), _verticalWidget(), XWidget()
+              XWidget(),
+              _verticalWidget(),
+              CircleWidget(isDark: false),
+              _verticalWidget(),
+              XWidget()
             ],
           )
         ],
@@ -60,19 +69,15 @@ class _MatrixWidgetState extends State<MatrixWidget> {
       _isDark = brightness == Brightness.dark;
     });
 
-    WidgetsBinding.instance.addPostFrameCallback(
-            (_) {
-              setState(() {
-                _rowHeight = _rowKey.currentContext.size.height;
-              });
-            });
-
-
-
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      setState(() {
+        _rowHeight = _rowKey.currentContext.size.height;
+      });
+    });
   }
 
-
   Widget _verticalWidget() {
-    return Container(height: _rowHeight, child: VerticalDivider(color: Colors.grey));
+    return Container(
+        height: _rowHeight, child: VerticalDivider(color: Colors.grey));
   }
 }

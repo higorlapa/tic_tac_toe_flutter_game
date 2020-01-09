@@ -6,7 +6,10 @@ class XWidget extends StatelessWidget {
     return Container(
       width: 30,
       height: 30,
-      child: Icon(Icons.close, size: 30,),
+      child: Icon(
+        Icons.close,
+        size: 30,
+      ),
     );
   }
 }
