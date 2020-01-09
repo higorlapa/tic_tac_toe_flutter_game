@@ -16,7 +16,6 @@ class _MatrixWidgetState extends State<MatrixWidget> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     var brightness = MediaQuery.of(context).platformBrightness;
