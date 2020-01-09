@@ -8,10 +8,8 @@ part 'new_game_controller.g.dart';
 class NewGameController = NewGameBase with _$NewGameController;
 
 abstract class NewGameBase with Store {
-
   @action
   startGame(context) {
-
     Navigator.of(context)
         .pushReplacement(MaterialPageRoute(builder: (_) => InGameScreen()));
   }

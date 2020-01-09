@@ -9,9 +9,7 @@ class _InGameScreenState extends State<InGameScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-
-      ),
+      body: Center(),
     );
   }
 }

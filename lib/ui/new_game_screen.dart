@@ -10,7 +10,6 @@ class NewGameScreen extends StatefulWidget {
 }
 
 class _NewGameScreenState extends State<NewGameScreen> {
-
   final _newGameController = NewGameController();
 
   @override
@@ -21,20 +20,19 @@ class _NewGameScreenState extends State<NewGameScreen> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.symmetric(vertical: 20),
-              child: FlatButton(
-                onPressed: () {
-                  _newGameController.startGame(context);
-                },
-                child: Text(
-                  'New Game',
-                  style: TextStyle(fontSize: 22),
-                ),
-              )
-            ),
+                padding: EdgeInsets.symmetric(vertical: 20),
+                child: FlatButton(
+                  onPressed: () {
+                    _newGameController.startGame(context);
+                  },
+                  child: Text(
+                    'New Game',
+                    style: TextStyle(fontSize: 22),
+                  ),
+                )),
             FlatButton(
               onPressed: _newGameController.exitGame(),
-              child:   Text(
+              child: Text(
                 'Exit',
                 style: TextStyle(fontSize: 22),
               ),
@@ -45,13 +43,8 @@ class _NewGameScreenState extends State<NewGameScreen> {
     );
   }
 
-
   @override
   void initState() {
     super.initState();
-
-
   }
-
-
 }

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CircleWidget extends StatelessWidget {
-
   final bool isDark;
 
   CircleWidget({this.isDark}) : assert(isDark != null);
-
 
   @override
   Widget build(BuildContext context) {

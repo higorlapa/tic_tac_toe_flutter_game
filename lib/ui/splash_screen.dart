@@ -65,7 +65,6 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _startScreen() async {
-
     await _splashController.initUI();
 
     Navigator.pushReplacement(
