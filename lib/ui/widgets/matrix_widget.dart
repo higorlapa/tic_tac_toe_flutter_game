@@ -11,7 +11,29 @@ class _MatrixWidgetState extends State<MatrixWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              /// 1, 2, 3
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              /// 4, 5, 6
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              /// 7, 8, 9
+            ],
+          )
+        ],
+      ),
+    )
   }
 
   @override
